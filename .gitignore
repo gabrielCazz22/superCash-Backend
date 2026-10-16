@@ -1,0 +1,18 @@
+# Dependencias
+node_modules/
+
+# Compilado / Build
+dist/
+
+# Variables de entorno y secretos
+.env
+.env.local
+*.env
+
+# Logs y temporales
+npm-debug.log*
+yarn-debug.log*
+.DS_Store
+
+# Documentos locales y notas
+*.md
