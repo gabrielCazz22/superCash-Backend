@@ -30,8 +30,22 @@ export const crearItemController = (req: Request, res: Response) => {
 
 export const actualizarItemController = (req: Request, res: Response) => {
     const { id } = req.params;
+
+    if (typeof id !== 'string') {
+        res.status(400).json({ error: "El ID proporcionado no es válido" });
+        return;
+    }
+
+
     const datomodificado = req.body;
-    actualizarItem(datomodificado)
+    const itemActualizados = actualizarItem(id, datomodificado)
+
+    if (!itemActualizados) {
+        res.status(404).json({ error: "Por favor, proporciona un id" });
+        return;
+    }
+
+    res.status(200).json(itemActualizados)
 
 
 }

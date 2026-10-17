@@ -31,7 +31,19 @@ export const crearItem = (datos: DatosCrearProducto): Producto => {
 };
 
 
-export const actualizarItem = (id: string) => {
+export const actualizarItem = (id: string, cambiosNuevos: Partial<Producto>) => {
+    const index = itemDB.findIndex(item => item.id === id);
+
+    if (index === -1) {
+        return null
+    }
+
+    itemDB[index] = {
+        ...itemDB[index],
+        ...cambiosNuevos
+    }
+
+    return itemDB[index]
 
 
 }
@@ -43,7 +55,7 @@ export const obtenerItems = (): Producto[] => {
 export const borrarItem = (id: string) => {
 
     const index = itemDB.findIndex(item => item.id === id)
-    if (index < 0) {
+    if (index === -1) {
         return false;
     }
 
