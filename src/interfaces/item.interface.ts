@@ -1,5 +1,4 @@
 
-export type UnidadMedida = 'kg' | 'g' | 'l' | 'pz';
 
 
 export interface Producto {

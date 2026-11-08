@@ -1,5 +1,6 @@
 import crypto from 'node:crypto'
-import { Producto, UnidadMedida } from '../interfaces/item.interface.js';
+import { Producto } from '../interfaces/item.interface.js';
+import { UnidadMedida } from '../types/producto.types.js';
 
 export interface DatosCrearProducto {
 
@@ -10,7 +11,6 @@ export interface DatosCrearProducto {
 }
 
 const itemDB: Producto[] = [];
-
 
 export const crearItem = (datos: DatosCrearProducto): Producto => {
 
