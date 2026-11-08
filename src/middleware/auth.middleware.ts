@@ -27,7 +27,7 @@ export function authMiddleware(req: Request, res: Response, next: NextFunction) 
     }
 
 
-    const token = header.split(" ")[1];
+    const token = partes[1];
 
     try {
 
